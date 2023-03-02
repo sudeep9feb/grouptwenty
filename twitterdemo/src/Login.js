@@ -51,7 +51,8 @@ function Login() {
                         type={"text"}
                         onChange={formik.handleChange}
                         name="username"
-                        value={formik.values.username}
+                        error={Boolean(formik.touched.username && formik.errors.username)}
+                        helperText={formik.touched.username && formik.errors.username}
                     >
                     </TextField>
                     <TextField
@@ -61,7 +62,6 @@ function Login() {
                         type={"email"}
                         onChange={formik.handleChange}
                         name="email"
-                        value={formik.values.email}
                         error={Boolean(formik.touched.email && formik.errors.email)}
                         helperText={formik.touched.email && formik.errors.email}
                     >
@@ -73,11 +73,14 @@ function Login() {
                         type={"password"}
                         onChange={formik.handleChange}
                         name="password"
-                        value={formik.values.password}
+                        error={Boolean(formik.touched.password && formik.errors.password)}
+                        helperText={formik.touched.password && formik.errors.password}
 
                     >
                     </TextField>
-                    <Button variant='contained' type='submit'>Login</Button>
+                    <Button variant='contained' type='submit' sx={{ textAlign: "center" }}>
+                        <Typography variant='h5'>Login</Typography>
+                    </Button>
 
                 </Stack>
             </form>
