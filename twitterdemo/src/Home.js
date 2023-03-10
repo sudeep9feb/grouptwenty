@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Stack } from '@mui/material'
 import React from 'react'
 import MainContent from './MainContent'
 import NavMenu from './NavMenu'
@@ -7,9 +7,11 @@ import RightBar from './RightBar'
 function Home() {
     return (
         <Box>
-            <NavMenu />
-            <MainContent />
-            <RightBar />
+            <Stack direction={"row"} spacing={2}>
+                <NavMenu />
+                <MainContent />
+                <RightBar />
+            </Stack>
         </Box>
     )
 }
